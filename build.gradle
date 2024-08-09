@@ -1,0 +1,113 @@
+plugins {
+    // Java plugin
+    id 'java'
+
+    // Java application
+    id 'application'
+
+    // Eclipse IDE export
+    id 'eclipse'
+
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+repositories {
+    // jcenter central repository
+    jcenter()
+
+    // maven central repository
+    mavenCentral()
+
+    // Scijava repository for ImageJ
+    maven {
+        url "https://maven.scijava.org/content/repositories/releases/"
+    }
+    
+    maven {
+        url "http://maven.irisa.fr/artifactory/list/kermeta-public-release/"
+    }
+}
+
+dependencies {
+    // Hibernate
+    // implementation 'org.hibernate:hibernate-core:5.4.27.Final'
+
+    // Gson (handling of json file)
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // ImageJ
+    implementation 'net.imagej:ij:1.53g'
+
+    // SQlite JDBC
+    // implementation 'org.xerial:sqlite-jdbc:3.34.0'
+
+    // SQlite Hibernate module
+    // implementation 'com.github.gwenn:sqlite-dialect:0.1.2'
+
+    // DL4J - Deeplearning
+    // implementation "org.deeplearning4j:deeplearning4j-core:1.0.0-beta6"
+
+    // Deeplearning backend, choose cuda to use CUDA GPU, or Native to use CPU.
+    // implementation "org.nd4j:nd4j-native-platform:1.0.0-beta6"
+    // implementation "org.nd4j:nd4j-cuda-9.2-platform:1.0.0-beta6"
+
+    // JavaFX lib
+    implementation 'org.openjfx:javafx:15'
+
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'com.google.guava:guava:28.2-jre'
+
+    // Add the jar lib
+    implementation fileTree(include: ['*.jar'], dir: 'lib')
+
+    // Jopendocument
+    implementation group: 'org.jopendocument', name: 'jOpenDocument', version: '1.3'
+
+    // apache commons.
+    implementation group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+
+    // assertJ.
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.13.2'	
+
+    // TestFX
+    testCompile 'org.testfx:testfx-core:4.0.15-alpha' 
+    testCompile 'org.testfx:testfx-junit:4.0.15-alpha'
+
+    // Choose lib for your system.
+    runtimeOnly "org.openjfx:javafx-graphics:15:win"
+    // runtimeOnly "org.openjfx:javafx-graphics:15:linux"
+    // runtimeOnly "org.openjfx:javafx-graphics:15:mac"
+}
+
+configurations {
+    all*.exclude group: 'xml-apis'
+}
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.media', 'javafx.web', 'javafx.swing' ]
+    version = "15"
+}
+
+mainClassName = "com.gcmrm.Launcher"
+
+compileJava.dependsOn(processResources)
+
+jar {
+    zip64 true
+    duplicatesStrategy = 'exclude'
+    manifest {
+        attributes 'Main-Class': 'com.gcmrm.Launcher'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+run {
+    if (project.hasProperty("appArgs")) {
+        args Eval.me(appArgs)
+    }
+}

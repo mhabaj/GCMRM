@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="344.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gcmrm.controllers.views.AboutController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="14.0" prefHeight="243.0" prefWidth="342.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gestionnaire de Campagne de Mesures pour la Recherche Médicale">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Réalisé dans le cadre d'un projet collectif au sein de Polytech Tours (Informatique)" textAlignment="CENTER" wrappingWidth="340.0">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="par ALHABAJ Mahmod, BOUTONNET Clément, CHABIN Jean-Malo, CHANTRE Honorine, DROUET Martin, PONS Maël, SOUVILLE-CHASSING Samuel, UNG Alexandre étudiants en 4e année" textAlignment="CENTER" wrappingWidth="340.0">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ce logiciel utilise la librairie libre ImageJ">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Text>
+            <Hyperlink fx:id="linkToImageJWebSite" onAction="#LaunchImageJWebSite" text="Lien vers le site web de ImageJ" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Licence GPL GNU">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date de création : janvier 2021" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8 mai 2021, 13:54:40
+    Author     : 3cdro
+*/
+
+body {
+    margin: 0;
+    background-color: #2d3447
+}
+
+#svg {
+    width: 100%;
+    height: 100%;
+}

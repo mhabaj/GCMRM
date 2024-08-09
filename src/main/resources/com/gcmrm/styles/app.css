@@ -1,0 +1,67 @@
+.homeBg {
+    -fx-background-color: #2d3447;
+    /*-fx-border-color: rgb(0,100,170);*/
+    -fx-border-width: 5;
+    -fx-background-image: url(../images/im.png);
+    -fx-background-size: contain;
+    -fx-background-position: bottom;
+    -fx-background-repeat: no-repeat;
+
+}
+
+.homeBtn {
+    -fx-background-color: rgb(0,100,170);
+    -fx-background-radius: 0;
+    -fx-cursor: hand
+}
+
+.menuBtn {
+    -fx-background-color: #00000000;
+    -fx-background-radius: 0;
+    -fx-cursor: hand
+}
+
+.menuBar {
+    -fx-background-color: rgb(0,100,170);
+    -fx-background-radius: 0;
+}
+
+.fileBtn {
+    -fx-border-color: rgb(0,100,170);
+    -fx-border-width: 5;
+    -fx-background-color: #00000000;
+    -fx-background-radius: 0;
+    -fx-cursor: hand
+}
+
+.homeBtn:hover {
+    -fx-background-color: rgb(0, 126, 216);
+}
+
+.homeBtn:pressed {
+    -fx-background-color: rgb(56, 172, 255);
+}
+
+.fileBtn:hover {
+    -fx-border-color: rgb(0, 126, 216);
+}
+
+.fileBtn:pressed {
+    -fx-border-color: rgb(56, 172, 255);
+}
+
+.menuBtn:hover {
+    -fx-background-color: #ffffff20;
+}
+
+.menuBtn:pressed {
+    -fx-background-color: #ffffff50;
+}
+
+.image {
+    -fx-background-color: #00000000;
+    -fx-background-image: url(../images/TBTv1.jpg);
+    -fx-background-size: contain;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
